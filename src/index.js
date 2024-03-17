@@ -49,19 +49,18 @@ fastify.post("/todo", (req, res) => {
 
 fastify.put("/todo", (req, res) => {
     const done = !!req.body["todo-done"];
+    const title = req.body.title;
     const id = req.body.id;
-
-    if (!id) {
-        return res.view(`src/templates/error.ejs`);
-    }
 
     const db = getDb();
     const idx = db.findIndex((entry) => entry.id === id);
     if (idx === -1) {
+        console.log("HI");
         return res.view(`src/templates/todos.ejs`, { todos: db });
     } else {
         const newDb = [...db];
         newDb[idx].done = done;
+        newDb[idx].title = title;
 
         fs.writeFileSync(
             `${dirname}/../db.json`,
