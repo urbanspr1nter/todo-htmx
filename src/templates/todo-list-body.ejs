@@ -1,0 +1,29 @@
+<%- todos.map(todo => `
+<tr class="todos-container-row" id="row-${todo.id}">
+    <td>
+        <form>
+            <input type="hidden" name="id" value="${todo.id}" />
+            <input type="checkbox" name="todo-done" ${todo.done ?
+            'checked="checked"' : undefined} hx-trigger="change" hx-put="/todo"
+            />
+        </form>
+    </td>
+    <td>
+        <form>
+            <input type="hidden" name="id" value="${todo.id}" />
+            <input type="text" hx-put="/todo" hx-trigger="change delay:500ms"
+            value="${todo.title}" ${todo.done ? 'disabled="disabled"' :
+            undefined} />
+        </form>
+    </td>
+    <td>
+        <a
+            href="#"
+            hx-delete="/todo/${todo.id}"
+            hx-target="#todo-list"
+            hx-swap="innerHTML swap:200ms"
+            >Delete</a
+        >
+    </td>
+</tr>
+`).join(""); %>

@@ -1,0 +1,74 @@
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: large;
+}
+
+button {
+    background-color: color(display-p3 0.128 0.225 0.564 / 1);
+    color: color(display-p3 0.945 0.937 0.95 / 1);
+    width: 100px;
+    height: 2rem;
+    font-size: large;
+    box-shadow: none;
+    inset: none;
+    margin-top: 1rem;
+    border-style: none;
+}
+
+button:hover {
+    background-color: color(display-p3 0.231 0.432 0.849 / 1);
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    height: 2rem;
+    font-size: large;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding: 0.25rem;
+}
+
+#todo-form {
+    margin: auto;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#todo-form label {
+    display: block;
+    margin: 0.5rem;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#todo-form input {
+    width: 95vw;
+    margin: auto;
+}
+
+table.todos-container {
+    border: 2px solid color(display-p3 0.128 0.225 0.564 / 1);
+    margin: auto;
+    border-collapse: collapse;
+    width: 95vw;
+}
+
+table.todos-container thead tr {
+    margin: 0 0 0.5rem 0;
+}
+
+table.todos-container thead th {
+    border-bottom: 1px solid color(display-p3 0.128 0.225 0.564 / 1);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+table.todos-container tbody td {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.fade-out.htmx-swapping {
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+}
